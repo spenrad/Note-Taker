@@ -25,7 +25,7 @@ app.get("/api/notes", function (req, res) {
   return res.json(db);
 });
 
-    // post notes
+    // post notes and creates unique id
 app.post("/api/notes", function (req, res) {
   var newNote = req.body;
   newNote.id = db.length;
@@ -53,7 +53,7 @@ app.delete("/api/notes/:id", function (req, res) {
   fs.writeFile("./db/db.json", JSON.stringify(db), function (err) {
     if (err) {
       throw err;
-    } else res.send();
+    } else (res.send());
   });
 });
 
